@@ -1,0 +1,3 @@
+Ramin Yazdani | Classification Methods Visualization | main | feat: Initial repository setup
+
+Created repository with basic structure including README describing the project scope, .gitignore for Python/Jupyter artifacts, and requirements.txt with core dependencies (numpy, matplotlib, scikit-learn, jupyter). This establishes the foundation for the classification visualization project.
