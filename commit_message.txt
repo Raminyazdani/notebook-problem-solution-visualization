@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | feat: Initial repository setup
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Create notebook with title
 
-Created repository with basic structure including README describing the project scope, .gitignore for Python/Jupyter artifacts, and requirements.txt with core dependencies (numpy, matplotlib, scikit-learn, jupyter). This establishes the foundation for the classification visualization project.
+Created classification_visualization.ipynb with project title and initial structure. Added markdown cell with 'Classification Methods Visualization' heading to set the context for the notebook content.
