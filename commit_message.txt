@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Add core library imports
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Import scikit-learn modules
 
-Added import statements for numpy, matplotlib.pyplot, and configured matplotlib for inline display (%matplotlib inline). These are the foundational libraries needed for numerical operations and visualization throughout the project.
+Added scikit-learn imports: make_classification and make_blobs for synthetic data generation, LogisticRegression for classification, and LinearDiscriminantAnalysis/QuadraticDiscriminantAnalysis for discriminant analysis. These imports establish all the ML capabilities needed for the demonstrations.
