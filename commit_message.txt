@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Generate dataset for logistic regression
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Train logistic regression model
 
-Created synthetic binary classification dataset using make_classification with 100 samples, 2 features, and fixed random_state=1 for reproducibility. Added scatter plot visualization to show the distribution of the two classes in feature space.
+Implemented logistic regression model training on the synthetic dataset. Fit the LogisticRegression classifier and added initial prediction analysis including probability estimates. This demonstrates the most fundamental classification approach.
