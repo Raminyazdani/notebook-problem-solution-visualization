@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Add decision boundary visualization
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Add probability distribution analysis
 
-Implemented decision boundary plotting using meshgrid to create a dense grid of points in feature space. Created contour visualization showing probability gradients and overlaid training data points. The color-coded regions illustrate how the logistic regression classifier divides the feature space.
+Added histogram visualization of prediction probabilities to understand the distribution of model confidence across samples. Included Exercise 1 prompting users to analyze the range of probability outputs and what they indicate about model certainty.
