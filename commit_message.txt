@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Add confusion matrix visualization (with typo)
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Fix variable name typo in confusion matrix
 
-Added Exercise 3 for visualizing correct vs incorrect predictions and implemented confusion matrix display with seaborn heatmap. Included Type I and Type II error rate calculations. **MISTAKE**: Used incorrect variable name 'y_tests' instead of 'y_test' when calling confusion_matrix(y_tests, y_pred_class), which would cause NameError at runtime. This is a realistic typo from quickly typing variable names.
+**HOTFIX**: Corrected the variable name from 'y_tests' to 'y_test' in the confusion_matrix call. The code now properly references the test labels variable. This fix was caught after attempting to run the cell and seeing the NameError. Demonstrates typical debugging workflow of catching simple typos during testing.
