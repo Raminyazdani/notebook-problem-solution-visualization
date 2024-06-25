@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Add probability distribution analysis
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Add binary prediction conversion and error analysis
 
-Added histogram visualization of prediction probabilities to understand the distribution of model confidence across samples. Included Exercise 1 prompting users to analyze the range of probability outputs and what they indicate about model certainty. This helps build intuition about how confident the logistic regression model is in its predictions.
+Added Exercise 2 for converting probability predictions to binary class labels using 0.5 threshold. Implemented code to compute Type I (False Positive Rate) and Type II (False Negative Rate) errors, providing insight into the different types of classification mistakes the model makes.
