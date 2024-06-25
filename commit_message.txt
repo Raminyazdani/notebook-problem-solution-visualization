@@ -1,3 +1,3 @@
 Ramin Yazdani | Classification Methods Visualization | main | WIP: Add probability distribution analysis
 
-Added histogram visualization of prediction probabilities to understand the distribution of model confidence across samples. Included Exercise 1 prompting users to analyze the range of probability outputs and what they indicate about model certainty.
+Added histogram visualization of prediction probabilities to understand the distribution of model confidence across samples. Included Exercise 1 prompting users to analyze the range of probability outputs and what they indicate about model certainty. This helps build intuition about how confident the logistic regression model is in its predictions.
