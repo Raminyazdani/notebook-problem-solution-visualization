@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Fix variable name typo in confusion matrix
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Generate Gaussian data with isotropic covariance
 
-**HOTFIX**: Corrected the variable name from 'y_tests' to 'y_test' in the confusion_matrix call. The code now properly references the test labels variable. This fix was caught after attempting to run the cell and seeing the NameError. Demonstrates typical debugging workflow of catching simple typos during testing.
+Created Scenario 1 demonstrating Gaussian-distributed data with isotropic (spherical) covariance structure using make_blobs. Both classes have the same circular spread. Added visualization with confidence ellipses to illustrate this symmetric covariance pattern.
