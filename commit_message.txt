@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Add shared covariance scenario
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Add different covariance scenario
 
-Implemented Scenario 2 with shared covariance between classes - both classes have the same elliptical spread but different means. This is the ideal case for LDA which assumes equal covariance matrices across classes. Visualization clearly shows parallel ellipses.
+Created Scenario 3 demonstrating different covariance structures for each class - one class is more spread out than the other. This scenario favors QDA which can model class-specific covariances. The confidence ellipses have clearly different shapes and orientations.
