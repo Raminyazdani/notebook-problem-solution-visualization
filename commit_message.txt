@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Add comparative analysis exercises
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Enhance README with setup instructions
 
-Added Exercise 4, 5, and 6 prompting users to analyze and compare LDA vs QDA performance across different scenarios. Questions guide learners to match covariance assumptions with classifier choice and understand when to use each method. All 20 notebook cells now complete.
+Significantly expanded README.md with professional documentation including: project overview, what it does (logistic regression, Gaussian exploration, LDA vs QDA), tech stack details, repository structure, comprehensive setup instructions with prerequisites, and multiple installation options. Added clear sections for how to run the project with three different approaches (Jupyter Notebook, JupyterLab, VS Code).
