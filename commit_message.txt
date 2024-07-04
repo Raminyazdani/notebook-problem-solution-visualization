@@ -1,3 +1,3 @@
-Ramin Yazdani | Classification Methods Visualization | main | WIP: Implement LDA classification
+Ramin Yazdani | Classification Methods Visualization | main | WIP: Implement QDA classification
 
-Added LDA application to the three Gaussian scenarios. Implemented LinearDiscriminantAnalysis classifier and created decision boundary visualizations for each covariance structure. Shows how LDA performs optimally on shared covariance (Scenario 2) with linear boundaries.
+Added QDA application to the three scenarios using QuadraticDiscriminantAnalysis. Created decision boundary visualizations showing the quadratic (curved) boundaries that QDA can form. Demonstrates QDA's advantage on different covariance structures (Scenario 3) where it can capture more complex class boundaries.
