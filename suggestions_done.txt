@@ -1,0 +1,13 @@
+FILE	LOCATOR	BEFORE_SNIPPET	AFTER_SNIPPET	NOTES
+.gitignore	new file	N/A	Created .gitignore with Jupyter/Python patterns	Added proper gitignore for notebook checkpoints, __pycache__, virtualenvs, IDE files
+requirements.txt	line 3	numpy>=1.21.0\nmatplotlib>=3.3.0\njupyter>=1.0.0	numpy>=1.21.0\nmatplotlib>=3.3.0\nscikit-learn>=0.24.0\njupyter>=1.0.0	Added missing scikit-learn dependency used throughout notebook
+assignment_2_problem 4.ipynb	filename	assignment_2_problem 4.ipynb	classification_visualization.ipynb	Renamed to remove assignment language and spaces; align with professional identity
+classification_visualization.ipynb	cell[0] markdown	### Team members:\n### Mohammadamin Fouladi Ghadi 7057208\n### Ramin Yazdani 7068679	[DELETED]	Removed team members cell containing student names and IDs
+classification_visualization.ipynb	cell[0] markdown line 0	# Assignment 2 - Classification	# Classification Methods Visualization	Updated title to professional framing
+classification_visualization.ipynb	cell[0] markdown	In this assigment you will be coding for a Classification task hands-on. (10 Points) Fill the part with #TODO	[DELETED paragraph]	Removed assignment instruction text
+classification_visualization.ipynb	cells[6,8,10,14,16,19] markdown	<span style="color:red">Task N:	**Exercise N:**	Replaced task numbering with neutral exercise labels; removed red color styling
+classification_visualization.ipynb	cells[9,11] code	# TODO - Your code here	[DELETED]	Removed TODO comments (code already implemented)
+README.md	entire file	# Assignment 2 Problem 4\n**Project Type:** University Assignment/Task	# Classification Methods Visualization\n[Professional documentation]	Complete rewrite to portfolio-grade README with all required sections
+README.md	line 21	Submission_11_-_7068679_Ramin_Yazdani/	./	Fixed directory path references
+README.md	line 23	assignment_2_problem 4.ipynb	classification_visualization.ipynb	Updated filename reference to match rename
+
