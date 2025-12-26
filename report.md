@@ -551,6 +551,183 @@ Created comprehensive development narrative with:
 
 ---
 
+## PHASE 6 - STEP-EXPANDED GIT HISTORIAN (2025-12-26)
+
+### 6.1 Previous Run Assessment (COMPLETE)
+
+**Identified existing historian run:**
+- N_old = 10 steps (step_01 through step_10)
+- Location: history/steps/
+- Status: Complete but step_10 had minor inconsistencies with current working tree
+
+**Inconsistencies found in previous step_10:**
+- Had LICENSE file (not present in current root)
+- Missing PORTFOLIO_TRANSFORMATION_SUMMARY.md (present in current root)
+- .github/ISSUE_TEMPLATE/config.yml had different settings
+
+**Decision:** Regenerate entire historian with 15 steps to fix inconsistencies and meet step-expansion requirement.
+
+### 6.2 Step Expansion Calculation (COMPLETE)
+
+**Required multiplier:** N_new >= ceil(N_old * 1.5)
+- N_old = 10 steps
+- N_target = ceil(10 * 1.5) = ceil(15) = 15 steps
+- **Achieved:** N_new = 15 steps
+- **Multiplier:** 15 / 10 = 1.5× (exactly 50% increase)
+
+✅ Meets requirement: 15 >= 15
+
+### 6.3 Historian Archive (COMPLETE)
+
+**Archived previous run:**
+- Moved old history/ to history/_previous_run/
+- Preserved all 10 previous steps for reference
+- Created fresh history/ directory for new 15-step run
+
+### 6.4 Step Expansion Strategy (COMPLETE)
+
+**Strategy A - Split large commits (4 expansions):**
+
+1. **Old step 02** (imports + plotting) → **New steps 02-03**
+   - Step 02: Basic notebook structure and imports only
+   - Step 03: Add ellipse plotting utility separately
+
+2. **Old step 03** (complete logistic regression) → **New steps 04-05**
+   - Step 04: Implement core logistic regression algorithm
+   - Step 05: Add decision boundary visualization
+
+3. **Old step 07** (complete LDA/QDA comparison) → **New steps 10-11**
+   - Step 10: Implement LDA comparison visualizations
+   - Step 11: Implement QDA comparison visualizations
+
+4. **Old step 09** (complete README enhancement) → **New steps 13-14**
+   - Step 13: Add setup instructions and data/outputs sections
+   - Step 14: Add troubleshooting and learning outcomes sections
+
+**Strategy B - Insert "oops → hotfix" sequence (1 pair):**
+
+5. **Old step 04** (metrics exercises) → **New steps 06-07**
+   - **Step 06 (OOPS):** Added classification metrics exercises with incorrect import
+     - Mistake: Used `from sklearn.metrics import confusion_matrix` but referenced as `confusion_matrix_display`
+     - Realistic error: Confused the function (`confusion_matrix`) with the display class (`ConfusionMatrixDisplay`)
+     - Would cause AttributeError when trying to visualize confusion matrix
+   - **Step 07 (HOTFIX):** Corrected import to `ConfusionMatrixDisplay`
+     - Fixed: Changed to proper `from sklearn.metrics import ConfusionMatrixDisplay`
+     - This represents typical debugging: add feature, encounter error, immediately fix
+
+**Result:** 10 steps expanded to 15 steps using 4 commit splits + 1 oops/hotfix pair
+
+### 6.5 New Historian Generation (COMPLETE)
+
+**Created new 15-step history:**
+
+| Step | Description | Cell Count | Key Files |
+|------|-------------|------------|-----------|
+| 01   | Initial setup | 0 | README, .gitignore, requirements.txt |
+| 02   | Notebook + imports | 3 | notebook (title + imports) |
+| 03   | Ellipse plotting utility | 4 | notebook (+plot_ellipse) |
+| 04   | Logistic regression core | 7 | notebook (+log reg) |
+| 05   | Decision boundary viz | 8 | notebook (+boundary viz) |
+| 06   | Metrics exercises - OOPS | 11 | notebook (+metrics, WRONG import) |
+| 07   | Fix import - HOTFIX | 11 | notebook (CORRECTED import) |
+| 08   | Gaussian data generation | 14 | notebook (+make_data) |
+| 09   | LDA/QDA theory docs | 16 | notebook (+theory) |
+| 10   | LDA visualizations | 17 | notebook (+LDA viz) |
+| 11   | QDA visualizations | 18 | notebook (+QDA viz) |
+| 12   | Exercise prompts | 20 | notebook (+exercises, all cells) |
+| 13   | README enhancement pt1 | 20 | Enhanced README (setup/data/outputs) |
+| 14   | README enhancement pt2 | 20 | Complete README (troubleshooting) |
+| 15   | Portfolio deliverables | 20 | All files + project_identity, report, etc. |
+
+**Method:**
+- Created Python script to systematically generate snapshots
+- Each snapshot includes only relevant files for that stage
+- Notebooks grow incrementally (3→4→7→8→11→11→14→16→17→18→20 cells)
+- README evolves from minimal → basic → enhanced → complete
+- Final step includes all portfolio deliverables
+
+### 6.6 history/github_steps.md (COMPLETE)
+
+**Created comprehensive documentation with:**
+
+✅ **"History expansion note" section** (at top):
+- N_old = 10, N_new = 15, multiplier = 1.5×
+- Mapping table showing old steps → new step ranges
+- Detailed explanation of both expansion strategies
+
+✅ **Explicit "oops → hotfix" description**:
+- Step 06 mistake: Wrong import for confusion matrix visualization
+- Why realistic: Common confusion in sklearn's visualization API
+- Step 07 fix: Corrected import statement
+- Impact: Only step 06 has the bug; all subsequent steps have correct code
+
+✅ **Complete 15-step timeline**:
+- Each step has: commit message, what was done, rationale
+- Progressive complexity from setup → algorithms → comparisons → documentation
+- Realistic commit boundaries and dependencies
+
+✅ **Development principles and design decisions documented**
+
+✅ **File evolution summary table**
+
+### 6.7 Snapshot Verification (COMPLETE)
+
+**Exclusion rules verified:**
+```bash
+# Checked all 15 snapshots
+for step in history/steps/step_*; do 
+  if [ -d "$step/history" ]; then 
+    echo "ERROR"; 
+  fi; 
+done
+# Result: ✓ No snapshots contain history/
+```
+
+**Final snapshot verification:**
+```bash
+diff -r --exclude=.git --exclude=history . history/steps/step_15/
+# Result: No differences (exit code 0)
+# ✓ step_15 matches current working tree exactly
+```
+
+**Snapshot integrity:**
+- ✅ Each step is a complete standalone copy
+- ✅ No .git/ directories in any snapshot
+- ✅ No history/ directories in any snapshot (no recursion)
+- ✅ Sequential numbering: step_01, step_02, ..., step_15
+- ✅ Step counts progress logically (notebooks grow cell-by-cell)
+
+### 6.8 Acceptance Criteria Verification (COMPLETE)
+
+**Step count requirement:**
+- ✅ N_new (15) >= ceil(N_old * 1.5) = ceil(15) = 15
+- ✅ Achieved exactly 1.5× multiplier
+
+**Expansion strategies:**
+- ✅ Split large commits: 4 instances (steps 02-03, 04-05, 10-11, 13-14)
+- ✅ Oops→hotfix sequence: 1 instance (steps 06-07)
+- ✅ All expansions are realistic and well-documented
+
+**Documentation requirements:**
+- ✅ history/github_steps.md includes "History expansion note"
+- ✅ Mapping of old→new step ranges provided
+- ✅ N_old, N_new, and multiplier documented
+- ✅ Explicit oops→hotfix description with rationale
+
+**Snapshot requirements:**
+- ✅ 15 sequential integer-numbered steps
+- ✅ No decimals (no step_03.5)
+- ✅ Final snapshot matches working tree exactly
+- ✅ No snapshot includes history/ or .git/
+
+**Realistic development path:**
+- ✅ Progressive complexity (imports → algorithms → comparisons → docs)
+- ✅ Logical dependencies (utilities before algorithms)
+- ✅ Commit sizes are realistic
+- ✅ Includes real debugging workflow (mistake→fix)
+
+---
+
 ## SUMMARY
 
 ### Transformation Complete
@@ -574,14 +751,16 @@ Created comprehensive development narrative with:
 - 1 documentation rewrite completed
 - 1 structure improvement (added .gitignore)
 
-**Files created: 8**
+**Files created/updated:**
 1. .gitignore (Python/Jupyter patterns)
 2. project_identity.md (professional identity)
-3. report.md (this file - complete audit trail)
+3. report.md (this file - complete audit trail, now with step-expansion documentation)
 4. suggestion.txt (issue ledger)
 5. suggestions_done.txt (change ledger)
-6. history/github_steps.md (development narrative)
-7. history/steps/step_01 ... step_10/ (10 complete snapshots)
+6. PORTFOLIO_TRANSFORMATION_SUMMARY.md (executive summary)
+7. history/github_steps.md (15-step development narrative, REGENERATED with 1.5× expansion)
+8. history/steps/step_01 ... step_15/ (15 complete snapshots, REGENERATED)
+9. history/_previous_run/ (archived original 10-step history)
 
 **No code logic changes made** - purely refactoring for professional presentation.
 
@@ -594,3 +773,70 @@ Created comprehensive development narrative with:
 ## FINAL STATUS: ✅ ALL PHASES COMPLETE
 
 The repository is now portfolio-ready with a complete, realistic development history.
+
+### Phase 0-5 (Previous Run)
+The original portfolio-ready transformation was completed with all deliverables and a 10-step historian.
+
+### Phase 6 (Current Run - Step Expansion)
+Successfully expanded Git Historian from 10 steps to 15 steps (1.5× multiplier) while maintaining final state integrity.
+
+---
+
+## FINAL SELF-AUDIT CHECKLIST
+
+### Portfolio Deliverables
+- [x] project_identity.md complete and aligned with README
+- [x] README.md portfolio-grade and accurate (12 comprehensive sections)
+- [x] suggestion.txt contains findings with final statuses (20 items, all STATUS=APPLIED)
+- [x] suggestions_done.txt contains all applied changes with before/after + locators (11 entries)
+- [x] PORTFOLIO_TRANSFORMATION_SUMMARY.md provides executive summary
+
+### Verification & Quality
+- [x] Repo verified working (dependencies installed and confirmed)
+- [x] No blockers documented - project is fully runnable
+- [x] Code review completed (PASSED - 65 files reviewed, minor formatting only)
+- [x] Security scan completed (SAFE - no vulnerabilities, no secrets, self-contained)
+- [x] Ledgers coherent (all entries have proper STATUS, all changes documented)
+
+### Git Historian (Expanded)
+- [x] history/github_steps.md complete + includes "History expansion note"
+- [x] History expansion note documents N_old=10, N_new=15, multiplier=1.5×
+- [x] Mapping of old→new step ranges provided in expansion note
+- [x] At least one explicit "oops → hotfix" sequence described (steps 06-07)
+- [x] history/steps contains step_01..step_15 (sequential integers)
+- [x] N_new (15) >= ceil(N_old * 1.5) = 15 ✓
+- [x] step_15 matches final working tree exactly (excluding history/) - verified with diff
+- [x] No snapshot includes history/ (no recursion) - verified all 15 steps
+- [x] No snapshot includes .git/ - verified all 15 steps
+- [x] Previous 10-step history archived in history/_previous_run/
+
+### Safety & Integrity
+- [x] No secrets added (no API keys, passwords, or credentials)
+- [x] No fabricated datasets (all synthetic via sklearn)
+- [x] No user code deleted (only removed metadata and comments)
+- [x] No feature creep (preserved original demonstration intent)
+- [x] Behavior-preserving changes only (no logic modifications)
+
+### Reproducibility
+- [x] Dependencies specified in requirements.txt
+- [x] All dependencies verified installed (numpy, matplotlib, scikit-learn, jupyter)
+- [x] Fixed random seeds documented (random_state parameters throughout)
+- [x] No absolute paths (all self-contained)
+- [x] No external data files required (synthetic data generation only)
+
+---
+
+## COMPLETION SUMMARY
+
+**All acceptance criteria met:**
+✅ Portfolio deliverables complete  
+✅ Git Historian expanded from 10 → 15 steps  
+✅ Final snapshot verified to match working tree  
+✅ No recursion in snapshots  
+✅ All documentation accurate  
+✅ Project is runnable and reproducible  
+✅ Safety and integrity maintained  
+
+**Date completed:** 2025-12-26  
+**Final step count:** 15 steps (1.5× expansion from original 10 steps)  
+**Status:** READY FOR REVIEW
