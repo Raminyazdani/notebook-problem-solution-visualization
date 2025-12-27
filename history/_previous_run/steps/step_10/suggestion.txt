@@ -1,0 +1,21 @@
+TYPE	FILE	LOCATOR	BEFORE_SNIPPET	PROPOSED_CHANGE	RATIONALE	STATUS
+RENAME	assignment_2_problem 4.ipynb	filename	assignment_2_problem 4.ipynb	classification_visualization.ipynb	Remove assignment language and spaces from filename; align with professional identity	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[0] (markdown)	### Team members:\n### Mohammadamin Fouladi Ghadi 7057208\n### Ramin Yazdani 7068679	Remove entire cell	Contains student names and IDs; pure assignment metadata	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[1] (markdown) line 0	# Assignment 2 - Classification	# Classification Methods Visualization	Remove assignment reference; make title professional	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[1] (markdown) line 2	In this assigment you will be coding for a Classification task hands-on. (10 Points) Fill the part with #TODO	Remove this paragraph	Assignment instruction language; not relevant to portfolio	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[7] (markdown)	<span style="color:red">Task 1: Check range of outputs...	**Exercise 1:** Check range of outputs...	Replace task numbering with neutral exercise framing (or remove color/task entirely)	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[9] (markdown)	<span style="color:red">Task 2: Convert the probability predictions...	**Exercise 2:** Convert the probability predictions...	Replace task numbering with neutral framing	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[11] (markdown)	<span style="color:red">Task 3: Determine correct predictions...	**Exercise 3:** Determine correct predictions...	Replace task numbering with neutral framing	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[15] (markdown)	<span style="color:red">Task 4: Match the plotted scenerios...	Remove entire task cell	Contains completed task answers specific to assignment grading	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[17] (markdown)	<span style="color:red">Task 5: Assume that we need to perform...	Remove or reframe as discussion	Assignment-specific question with answer; not needed in portfolio	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[20] (markdown)	<span style="color:red"> Task 6: For each of the scenerios...	Remove or reframe as observations	Assignment question with partial answer	APPLIED
+TRACE	assignment_2_problem 4.ipynb	cell[8,10,12] (code)	# TODO - Your code here	Remove TODO comments	TODO markers are assignment artifacts; code is already complete	APPLIED
+TRACE	README.md	line 1	# Assignment 2 Problem 4	# Classification Methods Visualization	Remove assignment language from title	APPLIED
+TRACE	README.md	line 3	**Project Type:** University Assignment/Task	Remove this line	Explicitly labels as assignment	APPLIED
+TRACE	README.md	line 6-8	This is the submission for Assignment 2, Problem 4...	Professional description of classification visualization	Replace assignment-specific description	APPLIED
+TRACE	README.md	line 21-22	Submission_11_-_7068679_Ramin_Yazdani/	./	Update path references to current directory structure	APPLIED
+TRACE	README.md	line 23	├── assignment_2_problem 4.ipynb	├── classification_visualization.ipynb	Update filename reference	APPLIED
+TRACE	README.md	line 42	cd Submission_11_-_7068679_Ramin_Yazdani	cd .	Fix incorrect directory reference	APPLIED
+DOC	README.md	entire file	Current assignment-focused README	Complete portfolio-grade README aligned with project_identity.md	Replace with professional documentation covering all required sections	APPLIED
+STRUCTURE	.gitignore	missing file	N/A	Create .gitignore with Jupyter/Python patterns	Add proper gitignore for notebook checkpoints, __pycache__, etc.	APPLIED
+DEPENDENCY	requirements.txt	all entries	numpy>=1.21.0\nmatplotlib>=3.3.0\njupyter>=1.0.0	Verify versions match current best practices; add scikit-learn	Missing scikit-learn which is used extensively	APPLIED
