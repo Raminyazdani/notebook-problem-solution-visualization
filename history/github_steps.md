@@ -28,18 +28,18 @@ The previous 10-step history has been expanded to 15 steps using two strategies:
 
 #### Strategy B: Insert "oops → hotfix" sequence
 - **New steps 06-07:** Intentional mistake followed by immediate fix
-  - **Step 06 (OOPS):** Added classification metrics exercises with incorrect import statement
-    - Mistake: Used `from sklearn.metrics import confusion_matrix` but referenced it as `confusion_matrix_display`
-    - This is a realistic mistake when working with scikit-learn's visualization utilities
-    - The code would fail at runtime when trying to create confusion matrix plots
-  - **Step 07 (HOTFIX):** Corrected the import to properly use `ConfusionMatrixDisplay`
-    - Fixed: Changed to `from sklearn.metrics import ConfusionMatrixDisplay`
-    - This fix allows the confusion matrix visualization to work correctly
-    - Represents a common debugging scenario when adding new visualization features
+  - **Step 06 (OOPS):** Added classification metrics exercises with variable name typo
+    - Mistake: Used `confusion_matrix(y_tests, y_pred_class)` with incorrect variable name `y_tests` instead of `y_test`
+    - This is a realistic typo that occurs when quickly writing code
+    - The code would fail at runtime with `NameError: name 'y_tests' is not defined`
+  - **Step 07 (HOTFIX):** Corrected the variable name typo
+    - Fixed: Changed to `confusion_matrix(y_test, y_pred_class)` using the correct variable name
+    - This fix allows the confusion matrix computation to work correctly
+    - Represents a common debugging scenario - catching a simple typo after testing
 
 This oops→hotfix pair demonstrates realistic development workflow where:
-1. A developer adds new functionality with a small import mistake
-2. They immediately catch and fix it (possibly after running the notebook and seeing an error)
+1. A developer adds new functionality but makes a simple variable name typo
+2. They immediately catch and fix it after running the notebook and seeing the NameError
 3. The final code is correct, but the history shows the learning process
 
 ### Comparison Table
@@ -140,35 +140,36 @@ This oops→hotfix pair demonstrates realistic development workflow where:
 - **Exercise 2:** Binary threshold conversion and Type I/II error computation
 - **Exercise 3:** Visualization of correct vs incorrect predictions
 - Added confusion matrix cell with visualization code
-- **MISTAKE:** Used incorrect import: `from sklearn.metrics import confusion_matrix`
-  - Referenced it as `confusion_matrix_display` in visualization code
-  - This would cause AttributeError at runtime
+- **MISTAKE:** Variable name typo in confusion matrix code
+  - Used `confusion_matrix(y_tests, y_pred_class)` with incorrect variable name `y_tests`
+  - Should be `y_test` (without the extra 's')
+  - This would cause `NameError: name 'y_tests' is not defined` at runtime
 
-**Rationale:** Adding exercises helps users understand model performance beyond accuracy. However, made a realistic mistake with the import statement - confused `confusion_matrix` (the function) with `ConfusionMatrixDisplay` (the visualization class).
+**Rationale:** Adding exercises helps users understand model performance beyond accuracy. However, made a realistic typo when quickly writing the confusion matrix computation - added an extra 's' to the variable name.
 
 **Why this mistake is realistic:**
-- scikit-learn has both `confusion_matrix` (computes matrix) and `ConfusionMatrixDisplay` (visualizes it)
-- Easy to confuse when adding visualization code
-- Would be caught immediately when running the cell
-- Common confusion for developers new to sklearn's visualization API
+- Simple typo that happens when coding quickly
+- Variable `y_test` exists but typed as `y_tests`
+- Would be caught immediately when running the cell (NameError)
+- Common mistake that any developer makes occasionally
 
 ---
 
-### Step 07: Fix Confusion Matrix Import (HOTFIX)
-**Commit Message:** Fix: Correct ConfusionMatrixDisplay import
+### Step 07: Fix Variable Name Typo (HOTFIX)
+**Commit Message:** Fix: Correct variable name in confusion matrix computation
 
 **What was done:**
-- **FIXED:** Changed import to `from sklearn.metrics import ConfusionMatrixDisplay`
-- Updated visualization code to properly use `ConfusionMatrixDisplay.from_predictions()`
-- Verified confusion matrix now displays correctly
+- **FIXED:** Corrected variable name from `y_tests` to `y_test`
+- Changed `confusion_matrix(y_tests, y_pred_class)` to `confusion_matrix(y_test, y_pred_class)`
+- Verified confusion matrix now computes correctly
 
-**Rationale:** Caught the import error from step 06 when testing the notebook. This is a typical debugging sequence - add feature, encounter error, immediately fix. The mistake existed only in step 06; step 07 and all subsequent steps have the correct import.
+**Rationale:** Caught the typo from step 06 when testing the notebook. This is a typical debugging sequence - add feature, make small typo, encounter error, immediately fix. The mistake existed only in step 06; step 07 and all subsequent steps have the correct variable name.
 
 **Resolution:**
-- Problem: AttributeError when trying to visualize confusion matrix
-- Diagnosis: Wrong import statement (imported function instead of display class)
-- Fix: Import the correct ConfusionMatrixDisplay class
-- Verification: Confusion matrix visualization now works
+- Problem: NameError when trying to compute confusion matrix
+- Diagnosis: Variable name typo (`y_tests` instead of `y_test`)
+- Fix: Correct the variable name to match the actual variable
+- Verification: Confusion matrix computation now works
 
 ---
 
